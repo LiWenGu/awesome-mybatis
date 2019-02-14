@@ -36,7 +36,7 @@ import org.apache.ibatis.logging.LogFactory;
 
 /**
  * A default implementation of {@link VFS} that works for most application servers.
- * 默认的VFS，提供了读取jar包的方法
+ * 默认的VFS，提供了读取jar包的方法，使用的是 JarInputStream 读取 jar 包
  * 
  * @author Ben Gunter
  */
