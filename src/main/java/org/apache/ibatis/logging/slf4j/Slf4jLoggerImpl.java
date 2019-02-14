@@ -23,7 +23,7 @@ import org.slf4j.Logger;
  */
 /**
  * 用的slf4j里的Logger和LoggerFactory
- *
+ * 适用于 slf4j < 1.6
  */
 class Slf4jLoggerImpl implements Log {
 

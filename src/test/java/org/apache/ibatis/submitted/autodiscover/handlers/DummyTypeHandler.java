@@ -22,13 +22,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.apache.ibatis.type.JdbcType;
+import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
 import org.apache.ibatis.type.TypeHandler;
 
 /*
 * @version $Id: MyBatisSampleTest.java 2697 2010-10-14 13:04:41Z eduardo.macarron $
+* 指定 java 类型和 jdbc 类型对应关系
 */
 @MappedTypes(BigInteger.class)
+@MappedJdbcTypes(value={JdbcType.CHAR,JdbcType.VARCHAR})
 public class DummyTypeHandler implements TypeHandler<Object> {
 
     public void setParameter(PreparedStatement ps, int i, Object parameter, JdbcType jdbcType) throws SQLException {

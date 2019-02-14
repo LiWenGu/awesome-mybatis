@@ -22,8 +22,8 @@ import java.lang.reflect.Constructor;
  * @author Eduardo Macarron
  */
 /**
- * 日志工厂
- * 
+ * 日志适配器生产工厂
+ * 优先级 slf4j -> commons -> log4j -> commons -> no
  */
 public final class LogFactory {
 

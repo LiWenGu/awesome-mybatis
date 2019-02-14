@@ -19,7 +19,7 @@ package org.apache.ibatis.logging;
  * @author Clinton Begin
  */
 /**
- * 日志接口
+ * Mybaits日志统一接口
  * 
  */
 public interface Log {

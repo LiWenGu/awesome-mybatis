@@ -28,7 +28,7 @@ import org.apache.ibatis.logging.Log;
 
 /**
  * Base class for proxies to do logging
- * 
+ * 使用动态代理将 SQL 执行语句使用 log 打印出来
  * @author Clinton Begin
  * @author Eduardo Macarron
  */

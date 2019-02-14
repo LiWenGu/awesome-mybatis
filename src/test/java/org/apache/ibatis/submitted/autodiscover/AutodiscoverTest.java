@@ -23,6 +23,7 @@ import java.math.BigInteger;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.ibatis.submitted.autodiscover.aliases.DummyTypeAlias;
 import org.apache.ibatis.submitted.autodiscover.mappers.DummyMapper;
 import org.apache.ibatis.type.TypeAliasRegistry;
 import org.apache.ibatis.type.TypeHandlerRegistry;
@@ -31,29 +32,29 @@ import org.junit.Test;
 
 public class AutodiscoverTest {
 
-  protected static SqlSessionFactory sqlSessionFactory;
+    protected static SqlSessionFactory sqlSessionFactory;
 
-  @BeforeClass
-  public static void setup() throws Exception {
-    Reader reader = Resources.getResourceAsReader("org/apache/ibatis/submitted/autodiscover/MapperConfig.xml");
-    sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-    reader.close();
-  }
+    @BeforeClass
+    public static void setup() throws Exception {
+        Reader reader = Resources.getResourceAsReader("org/apache/ibatis/submitted/autodiscover/MapperConfig.xml");
+        sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+        reader.close();
+    }
 
-  @Test
-  public void testTypeAlias() {
-    TypeAliasRegistry typeAliasRegistry = sqlSessionFactory.getConfiguration().getTypeAliasRegistry();
-    typeAliasRegistry.resolveAlias("testAlias");
-  }
+    @Test
+    public void testTypeAlias() {
+        TypeAliasRegistry typeAliasRegistry = sqlSessionFactory.getConfiguration().getTypeAliasRegistry();
+        assertTrue(typeAliasRegistry.resolveAlias("testAlias").equals(DummyTypeAlias.class));
+    }
 
-  @Test
-  public void testTypeHandler() {
-    TypeHandlerRegistry typeHandlerRegistry = sqlSessionFactory.getConfiguration().getTypeHandlerRegistry();
-    assertTrue(typeHandlerRegistry.hasTypeHandler(BigInteger.class));
-  }
+    @Test
+    public void testTypeHandler() {
+        TypeHandlerRegistry typeHandlerRegistry = sqlSessionFactory.getConfiguration().getTypeHandlerRegistry();
+        assertTrue(typeHandlerRegistry.hasTypeHandler(BigInteger.class));
+    }
 
-  @Test
-  public void testMapper() {
-    assertTrue(sqlSessionFactory.getConfiguration().hasMapper(DummyMapper.class));
-  }
+    @Test
+    public void testMapper() {
+        assertTrue(sqlSessionFactory.getConfiguration().hasMapper(DummyMapper.class));
+    }
 }
