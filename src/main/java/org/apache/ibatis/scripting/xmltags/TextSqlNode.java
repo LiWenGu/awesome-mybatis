@@ -27,7 +27,7 @@ import org.apache.ibatis.type.SimpleTypeRegistry;
  */
 /**
  * 文本SQL节点（CDATA|TEXT）
- *
+ * 包含 ${} 占位符的动态 SQL 节点
  */
 public class TextSqlNode implements SqlNode {
   private String text;

@@ -27,7 +27,7 @@ import org.apache.ibatis.session.Configuration;
  */
 /**
  * 静态SQL源码
- * 
+ * 最终 SQL 语句
  */
 public class StaticSqlSource implements SqlSource {
 

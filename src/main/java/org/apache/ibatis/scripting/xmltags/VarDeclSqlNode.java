@@ -17,6 +17,7 @@ package org.apache.ibatis.scripting.xmltags;
 
 /**
  * @author Frank D. Martinez [mnesarco]
+ * <bind></bind>
  */
 public class VarDeclSqlNode implements SqlNode {
 

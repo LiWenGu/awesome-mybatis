@@ -33,7 +33,7 @@ import org.apache.ibatis.type.JdbcType;
  */
 /**
  * SQL源码构建器
- * 
+ * 经过 SqlNode 之后的 sql 字符串
  */
 public class SqlSourceBuilder extends BaseBuilder {
 

@@ -34,6 +34,7 @@ import org.apache.ibatis.session.Configuration;
  */
 /**
  * 原始SQL源码，比DynamicSqlSource快
+ * 静态语句
  */
 public class RawSqlSource implements SqlSource {
 
