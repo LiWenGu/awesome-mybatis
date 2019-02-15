@@ -47,7 +47,7 @@ import org.apache.ibatis.type.JdbcType;
  */
 /**
  * XML配置构建器，建造者模式,继承BaseBuilder
- *
+ * 具体解析 mybatis_config.xml
  */
 public class XMLConfigBuilder extends BaseBuilder {
 

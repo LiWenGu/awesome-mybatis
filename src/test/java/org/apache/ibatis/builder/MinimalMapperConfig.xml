@@ -23,7 +23,27 @@
 
 <configuration>
 
+    <properties resource="123.123">
+        <property name="key" value="value"/>
+    </properties>
+    
+    <plugins>
+        <plugin interceptor=""></plugin>
+    </plugins>
 
+    <environments default="">
+        <environment id="">
+            <transactionManager type=""></transactionManager>
+            <dataSource type=""></dataSource>
+        </environment>
+    </environments>
+    <databaseIdProvider type="asd">
+        <property name="asda" value="asdasd"></property>
+    </databaseIdProvider>
+
+    <mappers>
+        <mapper resource="asdasd"/>
+    </mappers>
 </configuration>
 
 

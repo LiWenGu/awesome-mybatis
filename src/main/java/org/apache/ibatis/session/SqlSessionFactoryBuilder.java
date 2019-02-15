@@ -28,7 +28,7 @@ import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
 /*
  * Builds {@link SqlSession} instances.
  * 构建SqlSessionFactory的工厂.工厂模式
- *
+ * MyBatis 初始化入口
  */
 /**
  * @author Clinton Begin
@@ -63,6 +63,7 @@ public class SqlSessionFactoryBuilder {
         //这里是捕获异常，包装成自己的异常并抛出的idiom？，最后还要reset ErrorContext
       throw ExceptionFactory.wrapException("Error building SqlSession.", e);
     } finally {
+
       ErrorContext.instance().reset();
       try {
         reader.close();
