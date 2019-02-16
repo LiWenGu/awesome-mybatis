@@ -35,7 +35,7 @@ import org.apache.ibatis.session.RowBounds;
  */
 /**
  * 简单语句处理器(STATEMENT)
- * 
+ * 不存在 ? 占位符
  */
 public class SimpleStatementHandler extends BaseStatementHandler {
 

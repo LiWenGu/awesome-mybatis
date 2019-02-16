@@ -36,7 +36,8 @@ import org.apache.ibatis.transaction.Transaction;
  * @author Eduardo Macarron
  */
 /**
- * 二级缓存执行器
+ * 二级缓存执行器 应用级缓存，生命周期与应用 namespace 相同
+ * <setting name=”cacheEnabled” value=”true”/>
  */
 public class CachingExecutor implements Executor {
 

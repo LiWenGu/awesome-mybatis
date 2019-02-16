@@ -23,15 +23,29 @@ import org.apache.ibatis.mapping.MappedStatement;
 /**
  * @author Clinton Begin
  */
+
 /**
  * 键值生成器
- *
  */
 public interface KeyGenerator {
 
-  //定了2个回调方法，processBefore,processAfter
-  void processBefore(Executor executor, MappedStatement ms, Statement stmt, Object parameter);
+    //定了2个回调方法，processBefore,processAfter
+    /**
+     * 在执行 insert 之前执行，设置属性 order=”BEFORE”
+     * @param executor
+     * @param ms
+     * @param stmt
+     * @param parameter
+     */
+    void processBefore(Executor executor, MappedStatement ms, Statement stmt, Object parameter);
 
-  void processAfter(Executor executor, MappedStatement ms, Statement stmt, Object parameter);
+    /**
+     * 在执行 insert 之后执行，设置属性 order=”AFTER”
+     * @param executor
+     * @param ms
+     * @param stmt
+     * @param parameter
+     */
+    void processAfter(Executor executor, MappedStatement ms, Statement stmt, Object parameter);
 
 }
