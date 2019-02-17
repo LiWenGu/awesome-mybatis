@@ -41,7 +41,7 @@ import org.apache.ibatis.session.SqlSession;
  */
 /**
  * 默认SqlSession实现
- *
+ * 策略模式，扮演了 Context 角色，数据库操作全部在 executor 中
  */
 public class DefaultSqlSession implements SqlSession {
 
