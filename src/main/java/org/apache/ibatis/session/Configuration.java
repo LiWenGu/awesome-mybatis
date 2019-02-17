@@ -517,7 +517,7 @@ public class Configuration {
     } else {
       executor = new SimpleExecutor(this, transaction);
     }
-    //如果要求缓存，生成另一种CachingExecutor(默认就是有缓存),装饰者模式,所以默认都是返回CachingExecutor
+    //如果要求二级缓存，生成另一种CachingExecutor(默认就是有缓存),装饰者模式,所以默认都是返回CachingExecutor
     if (cacheEnabled) {
       executor = new CachingExecutor(executor);
     }
